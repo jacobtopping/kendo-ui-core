@@ -442,7 +442,7 @@ First we will configure a Kendo Grid for PHP binding and then we will implement 
         <?php
         if ($type == 'read') {
             // The 'read' method accepts table name, array of columns to select and request parameters as array
-            $data = $result->read('Products', array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued'), $request));
+            $data = $result->read('Products', array('ProductID', 'ProductName', 'UnitPrice', 'UnitsInStock', 'Discontinued'), $request);
         }
         ?>
 1. Implement 'update':
@@ -458,7 +458,7 @@ First we will configure a Kendo Grid for PHP binding and then we will implement 
         <?php
         if ($type == 'destroy') {
             // The 'destroy' method of DataSourceResult accepts table name, array of models and the name of the primary key column
-            $data = $result->update('Products', $request->models, 'ProductID');
+            $data = $result->destroy('Products', $request->models, 'ProductID');
         }
         ?>
 1. Return the result of the operation as JSON
